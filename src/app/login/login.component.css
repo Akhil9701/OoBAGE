@@ -1,0 +1,125 @@
+.login-container {
+    align-items: center;
+    
+    }
+    .bg-image{
+      min-height: 100%;
+      min-width: 100%;
+      top:0;
+      left:0;
+      position: fixed;
+      /* background-image: url("https://mdbootstrap.com/img/Photos/Slides/img%20(135).jpg"); */
+      display: block;
+      -webkit-filter: sepia(2);
+      filter: sepia(70%);
+      
+      /* Full height */
+      height: 100%; 
+      
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .bg-image-blur{
+      background-color :rgba(0, 0, 0, 0.6);
+    }
+    .navbar{
+      /* background-color:#2a2d5f; */
+      background-color: #2d3246
+      }
+    
+      .message{
+        color: #da534d;
+        float:left;
+        margin:-10px 0px 15px 6px;
+        font-size:12px;
+      }
+    form {
+      width: 100%;
+    }
+    
+    .login-content {
+      width: 400px;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .login-toolbar {
+      justify-content: center;
+    }
+    
+    .mat-form-field {
+      width: 100%;
+      display: block;
+    }
+    
+    .mat-raised-button {
+      width: 100%;
+      margin-top: 64px;
+      background-color: rgb(48, 48, 109)
+    }
+    h4{
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color:rgb(34, 151, 34);
+      margin-bottom: 16px;
+    }
+    .btn1{
+      width: 28%;
+      margin-left: 140px;
+      color: white;
+      background-color: rgb(28, 153, 28);
+      margin-top: 20px;
+      
+    }
+    
+    .mat-input-element {
+      caret-color:rgb(34, 151, 34);
+    }
+    .mat-form-field-ripple {
+      background-color:rgb(34, 151, 34);
+    }
+    .mat-checkbox{
+      margin-top: 36px;
+      
+    }
+    .checkbox{
+     
+      margin-left: -83px;
+      margin-top: -11px;
+    }
+    a{
+      margin-left: 82px;
+      color:black;
+      text-decoration: none;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 13px;
+    }
+    a:link { COLOR: black; TEXT-DECORATION: none; font-weight: normal }
+    a:visited { COLOR: black; TEXT-DECORATION: none; font-weight: normal }
+    a:active { COLOR: black; TEXT-DECORATION: none }
+    a:hover { COLOR:rgb(34, 151, 34);; TEXT-DECORATION: none; font-weight: none }
+    .mat-card-title,
+    .mat-card-content {
+      display: flex;
+      justify-content: center;
+      padding:10px;
+    }
+
+    .button {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .mat-form-field {
+        width: 100%;
+        min-width: 300px;
+      }
+
+      .mat-card{
+        width: 360px;
+        height: 400px;
+        position: relative;
+        top: 100px;
+      }

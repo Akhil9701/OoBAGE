@@ -1,0 +1,35 @@
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-form-field {
+  margin-right: 12px;
+}
+
+.example-headers-align{
+    position: relative;
+    top:200px
+}
+
+.mat-expansion-panel {
+    box-sizing: content-box;
+    width: 90%;
+    position: relative;
+    left: 60px;
+    display: block;
+    margin: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: margin 225ms cubic-bezier(.4,0,.2,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
+}
+
+.mat-expansion-panel-header:not([aria-disabled=true]) {
+    cursor: pointer;
+    background-color: #f8f9fa!important;
+}

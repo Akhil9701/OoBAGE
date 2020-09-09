@@ -1,0 +1,111 @@
+<div class="example-action-buttons">
+  <button mat-button (click)="accordion.openAll()">Expand All</button>
+  <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+</div>
+<!-- #docregion multi -->
+<mat-accordion class="example-headers-align" multi>
+<!-- #enddocregion multi -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      
+      <mat-panel-title>
+        <mat-icon>add</mat-icon>
+        Create User
+      </mat-panel-title>
+      <mat-panel-description>
+        Type your details
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <mat-label>First name</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Last name</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>User name</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="*****" min="1">
+    </mat-form-field>
+    <mat-action-row>
+      <button mat-button color="primary" (click)="nextStep()">Create</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+<!-- #docregion disabled -->
+  <mat-expansion-panel disabled style="position: relative;top:15px">
+<!-- #enddocregion disabled -->
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        
+      </mat-panel-title>
+      <mat-panel-description>
+        
+        <mat-icon>users</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <mat-label>Country</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel style="position: relative;top:30px">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>account_circle</mat-icon>
+        Users
+      </mat-panel-title>
+      <mat-panel-description>
+        <!-- Inform the date you wish to travel -->
+        <!-- <mat-icon>date_range</mat-icon> -->
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <!-- <mat-label>Date</mat-label> -->
+      <input matInput>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+          </tr>
+          <tr>
+            <td>Mary</td>
+            <td>Moe</td>
+            <td>mary@example.com</td>
+          </tr>
+          <tr>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-form-field>
+    
+    <!-- <mat-datepicker #picker></mat-datepicker> -->
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

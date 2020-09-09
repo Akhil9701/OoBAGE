@@ -1,0 +1,49 @@
+<div class="bg-image">
+</div>
+<div class="login-container">
+  <div class="login-content">
+    <!-- <mat-toolbar class="login-toolbar" >User Login</mat-toolbar> -->
+    <mat-card>
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-content>
+      <form name="loginform"  #lf="ngForm" novalidate> 
+        <div [ngClass]="{ 'has-error': lf.submitted && !phone.valid }">
+        <mat-form-field>
+          <mat-icon matPrefix>person_outline</mat-icon>
+          <input autofocus type="text" matInput placeholder="Email" name="phone" [(ngModel)]="login.phone"
+            #phone="ngModel"  required (keypress)="Keyname($event)" maxlength="40" minlength="3">
+        </mat-form-field>
+        <div *ngIf="lf.submitted && !phone.valid" class="help-block message"> Email id/mobile number is required</div>
+      </div>
+      
+        <span  *ngIf=" lf.submitted && login.phone!=''" class="help-block message" style="color:red">{{this.message2}}</span>
+        <div class="clearfix"></div>
+        <br>
+        <div [ngClass]="{ 'has-error': lf.submitted && !password.valid }">
+        <mat-form-field>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input type="password" autocomplete="false" matInput placeholder="Password" name="password"
+            [(ngModel)]="login.password" #password="ngModel" required (cut)="$event.preventDefault()" (copy)="$event.preventDefault()"
+            (paste)="$event.preventDefault()" minlength="8" maxlength="18">
+        </mat-form-field>
+        <div *ngIf="lf.submitted && !password.valid" class="help-block message" [hidden]='login.password'>Password
+            is required</div>
+          </div>
+        <span  *ngIf=" lf.submitted && login.password!=''" class="help-block message" style="color:red">{{this.message1}}</span>
+        <div class="clearfix"></div>
+        <br>
+        <!-- <div class="checkbox">
+          <a>Forgot password</a>
+          <i class="fas fa-question-circle"></i>
+        </div> -->
+        <!-- <mat-checkbox>Keep me logged in</mat-checkbox> -->
+        <!-- <button type="submit" class="btn1" mat-raised-button color="secondary"
+          (click)="userlogin(login)">Login</button> -->
+          <button mat-raised-button color="primary" (click)="userlogin(login)">Login</button>
+
+        <!-- <button type="submit" mat-raised-button color="primary" routerLink='/home/register'>Create New Account</button> -->
+      </form>
+    </mat-card-content>
+    </mat-card>
+  </div>
+</div>

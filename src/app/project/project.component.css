@@ -1,0 +1,96 @@
+
+ /* @import url('../../../node_modules/bootstrap/dist/css/bootstrap.css'); */
+
+/* @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"); */
+
+.navbar-expand-md .navbar-nav > li > a:hover,
+.navbar-expand-md .navbar-nav > li > a:focus {
+  color: #01abff;
+  background-color: transparent;
+}
+.navbar-expand-md .navbar-nav >li > a:active {
+  color: #01abff;
+  background-color: #f8f8ff;
+}
+
+
+
+
+
+/* .navbar-default .navbar-nav >li > a:hover {
+  color: #0000;
+  background-color: #f8f8ff;
+} */
+
+.navbar-default[_ngcontent-c0] .navbar-nav[_ngcontent-c0] > .active[_ngcontent-c0] > a[_ngcontent-c0], .navbar-default[_ngcontent-c0] .navbar-nav[_ngcontent-c0] > .active[_ngcontent-c0] > a[_ngcontent-c0]:hover, .navbar-default[_ngcontent-c0] .navbar-nav[_ngcontent-c0] > .active[_ngcontent-c0] > a[_ngcontent-c0]:focus {
+  color: #01abff;
+  background-color: #f8f8ff;
+}
+
+.bg-light {
+  background-color: transparent;
+  border-color: #D7DEE5;
+  box-shadow: 0px 1px 2px 1px #D7DEE5;
+}
+
+
+
+
+
+.re:hover {
+  cursor: pointer;
+}
+
+.navbar-default .navbar-nav > .open > a {
+  background-color: #333;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    background-color: #fff;
+}
+
+.navbar-header{
+    position: relative;
+    left: 12px;
+} 
+
+a {
+  /* color: #007bff; */
+  padding-left: 20px;
+  text-decoration: none;
+  background-color: transparent;
+  color: lightslategray;
+}
+
+
+.dropdown-menu {
+  background-color: #f8f8ff;
+}
+
+.dropdown-menu > li > a {
+  color: #777777;
+}
+
+.dropdown-menu > li:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #2a9fd6;
+}
+
+.dropdown-menu > li>a:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #2a9fd6;
+}
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: darkgrey;
+}
+
+.mat-icon {
+  font-size: 17px;
+  position: relative;
+  top: 3px;
+}

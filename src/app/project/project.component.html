@@ -1,0 +1,54 @@
+
+<div>
+    
+    <nav class="navbar navbar-expand-md  fixed-top bg-light">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <a routerLink="/" class="navbar-brand" style="padding-top:5px;padding-bottom:0;"><img
+                        src="http://www.oobalabs.com/wp-content/themes/release/images/svg/ooba-logo.svg"
+                        title="Data Quality Service" style="max-height:35px;" /></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto" style="position: relative;left: 10%;">
+                    <li class="nav-item" [ngClass]="{'active': selectedIndex == 1}" (click)="setSelected(1)">
+                        <a routerLink="create" class="changecolor">Project</a></li>
+                    <li class="nav-item" [ngClass]="{'active': selectedIndex == 2}" (click)="setSelected(2)">
+                        <a routerLink="measures" class="highlight">Datasource</a></li>
+                    <li class="nav-item" [ngClass]="{'active': selectedIndex == 3}" (click)="setSelected(3)">
+                        <a routerLink="jobs">Suit</a></li>
+                    <li class="nav-item" [ngClass]="{'active': selectedIndex == 4}" (click)="setSelected(4)">
+                        <a routerLink="mydashboard">Checkpoint</a></li>
+                </ul>
+                
+                <form class="form-inline my-2 my-lg-0">
+                    <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+                    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                             id="toggle">{{fullName}} <mat-icon style="font-size: 20px;">person</mat-icon><span class="caret"></span></a>
+                          <ul class="dropdown-menu dropdown-user" style="margin: 17px;left: -88px;">
+                            <li><a routerLink="userprofile"><mat-icon>person</mat-icon> User Profile</a></li>
+                            <li><a href="#!/undercons"><mat-icon>settings</mat-icon> Settings</a></li>
+                            <li class="divider"></li>
+                            <li><a href="https://griffin.incubator.apache.org/" target="_blank"><mat-icon>home</mat-icon> Home
+                              Page</a></li>
+                            
+                            <li><a href="https://github.com/apache/incubator-griffin/blob/master/griffin-doc/ui/user-guide.md"
+                                   target="_blank" ><mat-icon>help</mat-icon> v{{project}}</a></li>
+                            <li><a href="mailto:dev@griffin.incubator.apache.org"><mat-icon>mail</mat-icon> Contact us</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a (click)="logout()" class="re"><mat-icon>logout</mat-icon> Logout</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </form>
+            </div>
+        </div>
+    </nav>
+
+</div>
+<!-- <h1 style="margin-top: 200px;">{{title}}</h1> -->
+<router-outlet></router-outlet>

@@ -1,0 +1,242 @@
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
+<!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+<!------ Include the above in your HEAD tag ---------->
+
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <div class="container" style="position: relative;top:100px;">
+      <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings"
+        (onSelect)="onItemSelect($event)" (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)"
+        (onDeSelectAll)="onDeSelectAll($event)">
+      </angular2-multiselect>
+      <!-- <ul class="sidebar-nav">
+        <li>
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Select Project
+            <span class="caret"></span></button> -->
+      <!-- <select (change)="onSelect($event.target.value)">
+            <option *ngFor="#project of projects" [value]="project.project_name">{{project.project_name}}</option>
+          </select>
+          <div>selection={{selectedProject.project_name}}</div> -->
+      <!-- </li>
+      </ul> -->
+    </div>
+  </div>
+
+
+  <!-- /#sidebar-wrapper -->
+  <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-horizontal" style="position: relative;top: 100px;">
+
+    <div class="form-group">
+      <label for="project_name" class="col-sm-3 col-lg-2 control-label text-left">
+        project_name
+      </label>
+      <div class="col-sm-8">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+          <input type="text" class="form-control" placeholder="project_name"
+            [formControl]="form.controls['project_name']"
+            [ngClass]="{'form-control-danger': form.controls['project_name'].hasError('required') && form.controls['project_name'].touched}" />
+        </div>
+        <div class="feedback"
+          *ngIf="form.controls['project_name'].hasError('required') && form.controls['project_name'].touched">
+          project_name
+          is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group"
+      [ngClass]="{'has-danger': form.controls['project_desc'].hasError('required') && form.controls['project_desc'].touched}">
+      <label for="project_desc" class="col-sm-3 col-lg-2 control-label text-left">
+        project_desc
+      </label>
+      <div class="col-sm-8">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+          <input type="text" class="form-control" placeholder="project_desc" [formControl]="form.controls['project_desc']"
+            [ngClass]="{'form-control-danger': form.controls['project_desc'].hasError('required') && form.controls['project_desc'].touched}" />
+        </div>
+        <div class="feedback"
+          *ngIf="form.controls['project_desc'].hasError('required') && form.controls['project_desc'].touched">project_desc is
+          required.</div>
+        <div class="feedback"
+          *ngIf="form.controls['project_desc'].hasError('project_desc') && form.controls['project_desc'].touched">project_desc must be
+          Valid
+        </div>
+      </div>
+    </div>
+
+   
+  
+    <div class="form-group">
+      <button class="btn btn-primary" style="margin-left: 11px;">Create
+        user</button>
+    </div>
+
+  </form> -->
+  <!-- <div class="col-md-6 col-md-offset-3">
+    <form #regForm="ngForm" style="position: relative;top:100px">
+    <div class="form-group">
+      <input type="text" placeholder="Enter User id" name="project_name" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <input type="text" placeholder="Enter First name" name="project_desc" class="form-control" required>
+    </div>
+      <hr/>
+      <button class="btn btn-primary" type="" (click)="funsubmit(regForm)">Signup</button>
+  </form>
+</div> -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="rightButton">
+          <button class="btn btn-primary" (click)="openFormModal()" id="btnshowmodal">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            Create Project</button>
+
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Project Name</th>
+              <th>Description</th>
+              <th>Group</th>
+              <th>DataDocs</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let project of projects | paginate: { itemsPerPage: 5, currentPage: p }">
+
+              <td>{{project.project_name}}</td>
+              <td>{{project.project_desc}}</td>
+              <td>{{project.group_id}}</td>
+              <td>{{project.url_data_doc}}</td>
+              <!-- <td>{{project.url_data_doc}}</td> -->
+              <!-- <td class="text-right">€ 92,144</td> -->
+              <td style="position: relative;right: 16px;">
+                <button type="button" rel="tooltip" class="btn btn-danger" (click)="deleteProject(project.project_id)"
+                  data-original-title="" title="">
+                  <i class="material-icons">delete</i>
+                </button>
+                <button type="button" rel="tooltip" class="btn btn-info btn-link btn-just-icon btn-sm"
+                  data-original-title="" title="">
+                  <i class="material-icons">visibility</i>
+                </button>
+                <button type="button" rel="tooltip" data-target="#myModal" data-toggle="modal"
+                  (click)="updateProject(project.project_id)" class="btn btn-info btn-link btn-just-icon btn-sm"
+                  data-original-title="" title="">
+                  <i class="material-icons">edit</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">UPDATE PROJECT</h4>
+
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="registerForm" (ngSubmit)="saveUpdatedProject()">
+          <div class="row" *ngFor="let project of projects">
+
+            <div class="col-md-6 form-group">
+              <label>Project Id</label>
+              <input type="text" formControlName="project_id" value="{{project.project_id}}"
+                [(ngModel)]="project.project_id" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.project_id.errors }" disabled />
+              <div *ngIf="submitted && f.project_id.errors" class="invalid-feedback">
+                <div *ngIf="f.project_id.errors.required">Project Id is required</div>
+              </div>
+            </div>
+            <div class="col-md-6 form-group">
+              <label>Project Name</label>
+              <input type="text" formControlName="project_name" value="{{project.project_name}}"
+                [(ngModel)]="project.project_name" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.project_name.errors }" />
+              <div *ngIf="submitted && f.project_name.errors" class="invalid-feedback">
+                <div *ngIf="f.project_name.errors.required">Project Name is required</div>
+              </div>
+            </div>
+            <div class="col-md-6 form-group">
+              <label>Project Description</label>
+              <input type="text" formControlName="project_desc" value="{{project.project_desc}}" class="form-control"
+                [(ngModel)]="project.project_desc" [ngClass]="{ 'is-invalid': submitted && f.project_desc.errors }" />
+              <div *ngIf="submitted && f.project_desc.errors" class="invalid-feedback">
+                <div *ngIf="f.project_desc.errors.required">Project Desc is required</div>
+              </div>
+            </div>
+            <div class="col-md-6 form-group">
+              <label>Group</label>
+              <input type="text" formControlName="group_id" value="{{project.group_id}}" class="form-control"
+                [(ngModel)]="project.group_id" [ngClass]="{ 'is-invalid': submitted && f.group_id.errors }" />
+              <div *ngIf="submitted && f.group_id.errors" class="invalid-feedback">
+                <div *ngIf="f.group_id.errors.required">group id is required</div>
+              </div>
+            </div>
+            <!-- <div class="form-group">
+            
+            <input type="checkbox" formControlName="create_data_doc" [(ngModel)]="checked" class="form-control" style="position: relative;height: 20px;right: 220px;"  />
+            <label class="control-label text-left" style="position: relative;bottom: 20px;left: 35px;">Data Docs</label>
+          
+        </div> -->
+
+            <!-- <hr> -->
+            <div class="modal-footer" style="position: relative;left: 79%;">
+              <!-- <div class="form-group"> -->
+              <!-- <button class="btn btn-primary" (click)="activeModal.dismiss('Cross click')">Cancel</button> -->
+              <button class="btn btn-primary" style="float: right;" (click)="saveUpdatedProject()">SAVE</button>
+
+            </div>
+          </div>
+        </form>
+        <!-- <form name="testform">
+          <div class="row" *ngFor="let project of projects">
+            <div class="col-md-6 form-group">
+              <input type="text" class="form-control" name="project_id" [(ngModel)]="project.project_id"
+                placeholder={{project.project_id}}>
+            </div>
+            <div class="col-md-6 form-group">
+              <input type="text" class="form-control" name="project_name" [(ngModel)]="project.project_name"
+                placeholder={{project.project_name}}>
+            </div>
+            <div class="col-md-6 form-group">
+              <input type="text" class="form-control" name="project_name" [(ngModel)]="project.project_name"
+                placeholder={{project.project_name}}>
+            </div>
+            <div class="col-md-6 form-group">
+              <input type="text" class="form-control" name="project_name" [(ngModel)]="project.project_name"
+                placeholder={{project.project_name}}>
+            </div>
+          </div>
+         
+        </form> -->
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button"  class="btn btn-primary" (click)="testSubmit(test)" data-dismiss="modal">Submit</button>
+      </div> -->
+    </div>
+
+  </div>
+</div>

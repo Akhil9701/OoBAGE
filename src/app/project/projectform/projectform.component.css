@@ -1,0 +1,30 @@
+.modal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+.modal-header{
+    height: 60px;
+} 
+
+
+label{
+    font-weight: normal;
+}
+
+button:focus {
+    outline: none;
+    /* outline: 1px auto white; */
+}
+.modal-content{
+    bottom:100px;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: none;
+}
